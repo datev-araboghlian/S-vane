@@ -20,6 +20,17 @@
     </style>
 </head>
 <body>
+    <div style="background-color: black; width: 60%; height: 50px; display: flex; align-items: center; justify-content: space-around; color: white; font-size: 20px; margin: 20px auto; padding: 10px; border-radius: 10px; position: fixed; top: 0; z-index: 1000;">
+        <div id="daysBox" style="background-color: white; width: 25%; height: 30px; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: black;">
+            <span id="daysCount">0</span>: Days
+        </div>
+        <div id="hoursBox" style="background-color: white; width: 25%; height: 30px; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: black;">
+            <span id="hoursCount">0</span>: Hours
+        </div>
+        <div id="minutesBox" style="background-color: white; width: 25%; height: 30px; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: black;">
+            <span id="minutesCount">0</span>: Minutes
+        </div>
+    </div>
     <div id="mainDiv">
         <div id="content">
             <div id="code"></div>
@@ -50,7 +61,7 @@
     <script>
         function typewriter() {
             const lines = [
-                'ma Sévane',
+                'Ma Sévane',
                 'Te souviens-tu du jour où nous nous sommes rencontrés pour la première fois ??',
                 'C\'est le jour où l\'étincelle a commencé.',
                 'Tout ce que tu as laissé est imprimé dans mon cœur;',
@@ -110,6 +121,24 @@
         }
 
         startSpawning();
+    </script>
+    <script>
+        function updateCounter() {
+            const targetDate = new Date('2024-09-09T02:00:00');
+            const now = new Date();
+            const diff = now - targetDate;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+            document.getElementById('daysCount').innerText = days;
+            document.getElementById('hoursCount').innerText = hours;
+            document.getElementById('minutesCount').innerText = minutes;
+        }
+
+        setInterval(updateCounter, 60000);
+        updateCounter();
     </script>
     <script>
         // Start the typewriter effect when the page loads
