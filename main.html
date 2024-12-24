@@ -21,13 +21,13 @@
 </head>
 <body>
     <div style="background-color: black; width: 60%; height: 50px; display: flex; align-items: center; justify-content: space-around; color: white; font-size: 20px; margin: 20px auto; padding: 10px; border-radius: 10px; position: fixed; top: 0; z-index: 1000;">
-        <div id="daysBox" style="background-color: white; width: 25%; height: 30px; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: black;">
+        <div id="daysBox" style="background-color: white; width: 25%; height: 30px; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: black; padding: 5px;">
             <span id="daysCount">0</span>: Days
         </div>
-        <div id="hoursBox" style="background-color: white; width: 25%; height: 30px; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: black;">
+        <div id="hoursBox" style="background-color: white; width: 25%; height: 30px; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: black; padding: 5px;">
             <span id="hoursCount">0</span>: Hours
         </div>
-        <div id="minutesBox" style="background-color: white; width: 25%; height: 30px; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: black;">
+        <div id="minutesBox" style="background-color: white; width: 25%; height: 30px; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: black; padding: 5px;">
             <span id="minutesCount">0</span>: Minutes
         </div>
     </div>
@@ -51,7 +51,7 @@
             <div class="umbrella">☂️</div>
         </div>
     </div>
-    <button class="heart-button" onclick="window.location.href='photo.html';">❤️</button>
+    <button class="heart-button" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);" onclick="window.location.href='photo.html';">❤️</button>
     <script>
         function heartAnimation() {
             const canvas = document.getElementById('garden');
