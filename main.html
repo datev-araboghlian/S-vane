@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Content</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .heart-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            color: red;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="mainDiv">
+        <div id="content">
+            <div id="code"></div>
+            <div id="loveHeart" style="display: block;">
+                <canvas id="garden"></canvas>
+                <div id="words">
+                    <div id="messages">
+                        Toi et moi
+                        <div id="elapseClock"></div>
+                    </div>
+                    <div id="loveu">
+                        Je t'aime beaucoup<br/>
+                        <div class="signature">- Datev</div>
+                    </div>
+                </div>
+            </div>
+            <div class="umbrella">☂️</div>
+            <div class="umbrella">☂️</div>
+        </div>
+    </div>
+    <button class="heart-button" onclick="window.location.href='photo.html';">❤️</button>
+    <script>
+        function heartAnimation() {
+            const canvas = document.getElementById('garden');
+            // Heart animation logic here
+        }
+    </script>
+    <script>
+        function typewriter() {
+            const lines = [
+                'ma Sévane',
+                'Te souviens-tu du jour où nous nous sommes rencontrés pour la première fois ??',
+                'C\'est le jour où l\'étincelle a commencé.',
+                'Tout ce que tu as laissé est imprimé dans mon cœur;',
+                'Au fil du temps;',
+                'Le lien est devenu de plus en plus fort;',
+                'Voyage des inconnus à l\'amour;',
+                'Nous avons parcouru un long chemin ensemble;',
+                'Tout ce que je veux dire c\'est: Je t\'aimerai pour toujours;',
+                'Si tu veux voir quelque chose de mignon, appuie sur le cœur ci-dessous.',
+                '<br />',
+                '<a href="image.jpg"><i class="fas fa-heart" id="icon"></i></a>'
+            ];
+            let index = 0;
+            const speed = 200; // Slower speed of typing
+            const codeElement = document.getElementById('code');
+            codeElement.innerHTML = ''; // Clear previous content
+
+            console.log('Typewriter function called'); // Log when the function is called
+
+            function typeLine() {
+                if (index < lines.length) {
+                    codeElement.innerHTML += lines[index] + '<br />';
+                    index++;
+                    setTimeout(typeLine, speed);
+                } else {
+                    console.log('All lines displayed'); // Log when all lines are displayed
+                }
+            }
+            typeLine();
+        }
+    </script>
+    <script>
+        function showImage() {
+            const img = document.createElement('img');
+            img.src = 'image.jpg';
+            img.alt = 'My Image';
+            img.className = 'framed-image'; // Use the existing CSS class
+            document.body.appendChild(img); // Append the image to the body
+        }
+    </script>
+    <script>
+        function spawnUmbrella() {
+            const umbrella = document.createElement('div');
+            umbrella.className = 'umbrella';
+            umbrella.textContent = '☂️';
+            umbrella.style.position = 'absolute';
+            umbrella.style.left = Math.random() * 100 + 'vw';
+            umbrella.style.fontSize = Math.random() * 30 + 20 + 'px';
+            umbrella.style.animation = `fall ${Math.random() * 5 + 3}s linear infinite, spin ${Math.random() * 2 + 1}s linear infinite`;
+            document.body.appendChild(umbrella);
+        }
+
+        function startSpawning() {
+            for (let i = 0; i < 50; i++) { 
+                setTimeout(spawnUmbrella, Math.random() * 2000); 
+            }
+        }
+
+        startSpawning();
+    </script>
+    <script>
+        // Start the typewriter effect when the page loads
+        window.onload = function() {
+            heartAnimation(); // Start heart animation immediately
+            typewriter();
+        };
+    </script>
+</body>
+</html>

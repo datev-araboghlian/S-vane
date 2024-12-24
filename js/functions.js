@@ -1,4 +1,4 @@
-﻿
+
 var $window = $(window), gardenCtx, gardenCanvas, $garden, garden;
 var clientWidth = $(window).width();
 var clientHeight = $(window).height();
@@ -43,6 +43,8 @@ function getHeartPoint(angle) {
 }
 
 function startHeartAnimation() {
+    console.log("Heart animation started"); 
+    console.log("Heart animation function executed"); 
 	var interval = 50;
 	var angle = 10;
 	var heart = new Array();
@@ -93,6 +95,7 @@ function startHeartAnimation() {
 })(jQuery);
 
 function timeElapse(date){
+    console.log("Timer function called"); 
 	var current = Date();
 	var seconds = (Date.parse(current) - Date.parse(date)) / 1000;
 	var days = Math.floor(seconds / (3600 * 24));

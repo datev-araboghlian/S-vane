@@ -1,0 +1,89 @@
+body {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full height to center vertically */
+    margin: 0; /* Remove default margin */
+    background-color: #f0f0f0; /* Set your desired background color */
+}
+h1 {
+    font-size: 2em; /* Adjust font size as needed */
+    color: #333; /* Set text color */
+}
+
+#passwordForm {
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="password"] {
+    width: 200px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.heart-button {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    text-align: center;
+}
+
+.framed-image {
+    display: block;
+    max-width: 50%; /* Adjusted to make the image smaller */
+    height: auto;
+    margin: 20px auto;
+    border: 5px solid #ff0000; /* Red frame */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.umbrella {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 50px;
+    animation: fall 5s linear infinite, spin 2s linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        top: -10%;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(-50%, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, 0) rotate(360deg);
+    }
+}
